@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import nlwLogo from '../../assets/nlw-logo.svg'
+import Link from 'next/link'
 
 export const Hero = () => {
   return (
@@ -17,12 +18,12 @@ export const Hero = () => {
         </p>
       </div>
 
-      <a
-        href=""
+      <Link
+        href="/memories/new"
         className="inline-block rounded-full bg-green-500 px-5 py-3 font-alt text-sm font-bold uppercase leading-none text-[#09090A] transition-colors hover:bg-green-600"
       >
         Register Memories
-      </a>
+      </Link>
     </div>
   )
 }

@@ -11,13 +11,15 @@ export const GET = async (request: NextRequest) => {
   const { searchParams } = new URL(request.url)
   const code = searchParams.get('code')
 
+  const redirectTo = request.cookies.get('redirectTo')?.value
+
   const registerResponse = await api.post<RegisterResponseData>('/register', {
     code,
   })
 
   const { token } = registerResponse?.data
 
-  const redirectURL = new URL('/', request.url)
+  const redirectURL = redirectTo ?? new URL('/', request.url)
 
   return NextResponse.redirect(redirectURL, {
     headers: {
