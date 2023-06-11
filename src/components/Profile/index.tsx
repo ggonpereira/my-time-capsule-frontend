@@ -17,7 +17,10 @@ export const Profile = () => {
 
       <p className="max-w-[160px] text-sm leading-snug">
         {name}
-        <a className="block cursor-pointer text-red-400 transition-colors hover:text-red-300">
+        <a
+          href="/api/auth/logout"
+          className="block cursor-pointer text-red-400 transition-colors hover:text-red-300"
+        >
           Logout
         </a>
       </p>

@@ -21,7 +21,7 @@ export const GET = async (request: NextRequest) => {
 
   return NextResponse.redirect(redirectURL, {
     headers: {
-      'Set-Cookie': `token=${token}; Path=/; max-age=${COOKIE_ONE_MONTH_EXPIRATION}`,
+      'Set-Cookie': `token=${token}; Path=/; max-age=${COOKIE_ONE_MONTH_EXPIRATION};`,
     },
   })
 }
